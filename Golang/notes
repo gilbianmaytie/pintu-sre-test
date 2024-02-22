@@ -1,0 +1,25 @@
+## How to Build
+docker build -t simple-golang-app .
+
+## How to run Docker Application
+docker run --rm -p 8080:8080 simple-golang-app
+
+## How to Upload to image registry 
+docker tag simple-golang-app:latest gilbianmaytie/simple-golang-app:latest
+
+## Run in kubernetes
+kubectl apply -f deployment-go.yaml
+kubectl apply -f service-go.yaml
+
+## Check Port Service
+kubectl get service simple-golang-app
+
+## Using port forwarder
+kubectl port-forward service/simple-node-app 3000:9091 
+
+kubectl port-forward service/simple-golang-app 8080:9090 & 
+kubectl port-forward service/simple-node-app 3000:9091 & 
+
+
+## Run Service Tunnel for expose to local
+minikube service simple-node-app --url

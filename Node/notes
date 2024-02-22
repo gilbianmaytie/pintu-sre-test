@@ -1,0 +1,24 @@
+## How to Build
+docker build -t simple-node-app .
+
+## How to run Docker Application
+docker run --rm -p 8080:30000 simple-node-app
+
+## How to Upload to image registry 
+docker tag simple-node-app:latest gilbianmaytie/simple-node-app:latest
+
+## Run in kubernetes
+kubectl apply -f deployment-node.yaml
+kubectl apply -f service-node.yaml
+
+## Check Port Service
+kubectl get service simple-node-app
+
+## Using port forwarder
+kubectl port-forward service/simple-node-app 3000:9091 & 
+
+kubectl port-forward service/simple-golang-app 8080:9090 & 
+kubectl port-forward service/simple-node-app 3000:9091 & 
+
+## Run Service Tunnel for expose to local
+minikube service simple-node-app --url

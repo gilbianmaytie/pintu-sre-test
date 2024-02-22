@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-golang-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simple-golang-app
+  template:
+    metadata:
+      labels:
+        app: simple-golang-app
+    spec:
+      containers:
+      - name: simple-golang-app
+        image: gilbianmaytie/simple-golang-app:latest
+        ports:
+        - containerPort: 8080
