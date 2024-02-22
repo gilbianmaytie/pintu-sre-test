@@ -15,7 +15,7 @@ kubectl apply -f service-node.yaml
 kubectl get service simple-node-app
 
 ## Using port forwarder
-kubectl port-forward service/simple-node-app 3000:9091 & 
+kubectl port-forward service/simple-node-app 3000:9091 &
 
 kubectl port-forward service/simple-golang-app 8080:9090 & 
 kubectl port-forward service/simple-node-app 3000:9091 & 
