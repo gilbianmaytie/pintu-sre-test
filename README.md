@@ -9,7 +9,7 @@
  - kubectl apply -f service-go.yaml
  - kubectl apply -f deployment-node.yaml
  - kubectl apply -f service-node.yaml
- - kubectl port-forward service/simple-golang-app 8080:9090 & 
- - kubectl port-forward service/simple-node-app 3000:9091 & 
+ - kubectl port-forward service/simple-golang-app 8080:9090
+ - kubectl port-forward service/simple-node-app 3000:9091
 
 
